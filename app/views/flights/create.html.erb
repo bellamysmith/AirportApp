@@ -1,0 +1,12 @@
+<h1>API</h1>
+Depart From: <%= @departure_airport %><br>
+Arrive: <%= @arrivalAiportFSCode %><br>
+Stops: <%= @stops %><br>
+Departure Terminal: <%= @departureTerminal %><br>
+<% if @airport %>
+<% @airport.reviews.each do |r| %>
+<%= r.review_notes %>
+<% end %>
+<% else %>
+<h2>We could not find any reviews for that flight </h2>
+<% end %>

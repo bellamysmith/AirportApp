@@ -1,0 +1,60 @@
+// Place all the styles related to the airports controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+$orange: rgba(255,134,55,1);
+$dark-blue: rgba(34,112,148,1);
+$medium-blue: rgba(104,160,181, 1);
+$light-blue: rgba(173,207,214,1);
+$dark-orange: rgba(230,86,58,1);
+
+.airports {
+
+	background-color: $dark-orange;
+	
+	font-family: simplifica;
+	
+	.page-header {
+		position: relative; 
+		#background-color: $dark-blue;
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#227094), color-stop(100%,#adcfd6)); /* Chrome,Safari4+ */
+		padding-top: 10%;
+		padding-left: 10%;
+		
+
+		h1{ 
+			font-size: 60px;
+			font-weight: bold;
+			color: $orange;
+		}
+		
+		h2 {
+			font-size: 24px;
+		}
+
+	}
+
+	.main {
+		font-size: 20px;
+		width: 600px;
+		margin: 0 auto;
+		.airport-info {
+			background-color: rgba(255, 255, 255, .6);
+		}
+	img {
+		margin-left: 6%;
+		height: 300px;
+		width: 500px;
+		border-radius: 10px;
+		border: solid 5px lighten(#333, 50%);
+	}
+	}
+
+}
+.navbar {
+	width: 100%;
+	position: absolute; 
+	top: 0; 
+	font-size: 18px;
+	font-weight: bold;
+}

@@ -1,0 +1,12 @@
+<h1>Check your flight to see the ratings of your airport stops! </h1>
+<%= form_for Flight.new, url: flights_path do |f| %>
+   <%= f.label :airline %> <%= f.text_field :airline %>
+   <%= f.label :flight_num %> <%=f.text_field :flight_num %>
+
+ 
+    <%= submit_tag "Send input" %>
+
+
+<% end %>
+<%= @airline %>
+

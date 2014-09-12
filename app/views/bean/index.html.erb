@@ -1,0 +1,8 @@
+<header>
+	<h1>Roast Review<h1>
+</header>
+<body>
+	<h3>Reviewed Roast:</h3>
+	<% @beans.each do |b| %>
+		<%= b.name %>
+	<% end %>

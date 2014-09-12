@@ -1,0 +1,87 @@
+<body class="airports">
+<!--HEADEEEEEEEEEEEEEEEEEER -->
+<div class="page-header">
+	<h1>Airport Reviews</h1>
+	<h2>Here is where you can review an airport, browse reviews, see what there is to do in an airport, view your flight status, and other airport info.</h2>
+</div>
+
+<!--NAV BARRRRRRRRRRRR -->
+<div class="navbar navbar-default" role="navigation">
+	<div class="container-fluid">
+		<div class="navbar-header">
+      	<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+      </button>
+      <a class="navbar-brand" href="#">AR</a>
+  		</div>
+  		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      	<ul class="nav navbar-nav">
+        	<li class="active"><a href="#">Airports</a></li>
+        	<li><a href="#">Flights</a></li>
+        	<li class="dropdown">
+         		<a href="#" class="dropdown-toggle" data-toggle="dropdown">Browse Reviews<span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="#">Top-Rated</a></li>
+            <li><a href="#">Near You</a></li>
+            <li><a href="#">Best For...</a></li>
+            <li class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+            <li class="divider"></li>
+            <li><a href="#">One more separated link</a></li>
+          </ul>
+        </li>
+      	</ul>
+      <form class="navbar-form navbar-left" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search">
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+      </form>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#">Sign Up</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Write Review<span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="#">Sign Up</a></li>
+            <li><a href="#">Sign In</a></li>
+            <li><a href="#">Profile</a></li>
+            <li class="divider"></li>
+            <li><a href="#">Your Reviews</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+    </div>
+</div>
+<div class="main">
+  <%= image_tag @airport.name+".png" %>
+  <h1>View Airport:</h1>
+  <div class="airport-info">
+    <h2><%= @airport.name %></h2>
+      <ul>
+        <li><%= @airport.city %>
+        <li><%= @airport.state %>
+      </ul>
+      <h3> Reviews </h3>
+      <% if @overall.length > 0 %>
+      <h3>Overall Rating (<%= @overall.sum / @overall.length %>)</h3>
+      <% end %>
+      <% @airport.reviews.all.each do |r| %>
+        <p>Overall Score: <%= r.overall_score %></p>
+        <p><%= r.user.name %> says: <%= r.review_notes %></p>
+      <% end %>
+
+
+
+
+
+
+
+
+
+
+
+    <h2>
+</div>

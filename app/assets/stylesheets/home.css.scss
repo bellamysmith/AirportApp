@@ -1,0 +1,32 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+header {
+	text-align: center;
+	background-color: #EDDDCB;
+	padding-top: 7px;
+	position: relative;
+	top: -60px;
+	color: #D93427;
+}
+
+header > h1 {
+	font-family: Simplifica;
+	font-size: 10em;
+}
+
+header > h2 {
+	font-family: Simplifica; 
+	position: relative; 
+	top: -100px;
+	text-align: center;
+}
+
+
+/*<!--•	EF3F6B
+	•	EDDDCB
+	•	DF8527
+	•	2C1210
+	•	D93427
+	-->*/

@@ -1,0 +1,7 @@
+<h1>Check your flight to see the ratings of your airport stops! </h1>
+<h1> <%= @id %> </h1>
+<% form_tag airline_lights_path do %>
+    <%= text_field_tag :airline %>
+    <%= submit_tag "Send input" %>
+<% end %>
+

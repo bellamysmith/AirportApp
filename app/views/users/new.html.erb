@@ -1,0 +1,81 @@
+<body class="airports users">
+<!--HEADEEEEEEEEEEEEEEEEEER -->
+<div class="page-header">
+  <h1>Airport Reviews</h1>
+  <h2>Sign Up for Air-Hub to write your own reviews, track your flight, and save your favorite airports!</h2>
+</div>
+
+<!--NAV BARRRRRRRRRRRR -->
+<div class="navbar navbar-default" role="navigation">
+  <div class="container-fluid">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+      </button>
+      <a class="navbar-brand" href="#">AR</a>
+      </div>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="#">Airports</a></li>
+          <li><a href="#">Flights</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Browse Reviews<span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="#">Top-Rated</a></li>
+            <li><a href="#">Near You</a></li>
+            <li><a href="#">Best For...</a></li>
+            <li class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+            <li class="divider"></li>
+            <li><a href="#">One more separated link</a></li>
+          </ul>
+        </li>
+        </ul>
+      <form class="navbar-form navbar-left" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search">
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+      </form>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#">Sign Up</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Write Review<span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="#">Sign Up</a></li>
+            <li><a href="#">Sign In</a></li>
+            <li><a href="#">Profile</a></li>
+            <li class="divider"></li>
+            <li><a href="#">Your Reviews</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+    </div>
+</div>
+
+
+
+<div class="main">
+<h1>Sign-up</h1>
+<div class="container">
+<%= form_for @user do |f| %>
+  <div class="form-group">
+  <%= f.label :name %> <%= f.text_field :name, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+  <%= f.label :email %> <%= f.text_field :email, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+  <%= f.label :password %> <%= f.password_field :password, class: 'form-control' %>
+  </div>
+  
+  
+  <input name="commit" type="submit" class="btn btn-primary" value="Sign-up!" />
+
+</div>
+<% end %>
+</div>
+</div>
