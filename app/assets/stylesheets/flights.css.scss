@@ -1,3 +1,19 @@
 // Place all the styles related to the flights controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.api{
+	.page-header{
+		height: 100px;
+		h1{
+			position: relative;
+			top: -120px;
+			font-size: 28px;
+		}
+		h2{
+			position: relative;
+			top: -120px;
+			font-size: 24px;
+		}
+	}
+}

@@ -1,10 +1,19 @@
+<body class="airports api">
+<!--HEADEEEEEEEEEEEEEEEEEER -->
+<div class="page-header">
+	<h1>Airport Reviews</h1>
+	<h2>Here is where you can review an airport, browse reviews, see what there is to do in an airport, view your flight status, and other airport info.</h2>
+</div>
+
+
+
 <h1>API</h1>
 Depart From: <%= @departure_airport %><br>
 Arrive: <%= @arrivalAiportFSCode %><br>
 Stops: <%= @stops %><br>
 Departure Terminal: <%= @departureTerminal %><br>
-<% if @airport %>
-<% @airport.reviews.each do |r| %>
+<% if @airport.reviews.length > 0 %>
+<% @airport.reviews.all.each do |r| %>
 <%= r.review_notes %>
 <% end %>
 <% else %>

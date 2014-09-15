@@ -3,13 +3,14 @@ Coffeereview::Application.routes.draw do
   root :to => 'airports#index'
 
   resources :airports
+  get 'airports/new' => 'airports#new', as: :add_airport
   resources :users
   get 'users/:id/reviews' => 'users#review_list', as: :user_reviews
+  
   get '/signup' => 'users#new', as: :sign_up
 
   get '/signin', to: 'sessions#new', as: :sessions
   post '/signin', to: 'sessions#create'
-
   delete '/signout' => 'sessions#destroy', as: :sign_out
 
   resources :flights
@@ -20,6 +21,7 @@ Coffeereview::Application.routes.draw do
  
 
   resources :reviews
+  get 'reviews/new' => 'reviews#new', as: :add_review
 
 
   # The priority is based upon order of creation: first created -> highest priority.

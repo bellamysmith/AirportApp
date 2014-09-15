@@ -7,49 +7,111 @@ $dark-blue: rgba(34,112,148,1);
 $medium-blue: rgba(104,160,181, 1);
 $light-blue: rgba(173,207,214,1);
 $dark-orange: rgba(230,86,58,1);
+$review-font: 'Quattrocento Sans', sans-serif;
+
+
+.navbar {
+	position: absolute;
+	top: 10px;
+	z-index: 100;
+
+}
+.page-header {
+	position: relative; 
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#227094), color-stop(100%,#adcfd6)); /* Chrome,Safari4+ */
+	padding-top: 10%;
+	padding-left: 10%;
+		
+
+	h1{ 
+		font-size: 60px;
+		font-weight: bold;
+		color: $orange;
+	}
+		
+	h2 {
+		font-size: 28px;
+}
+}
+
 
 .airports {
 
-	background-color: $dark-orange;
+	background-color: lighten($orange, 30%);
 	
 	font-family: simplifica;
 	
-	.page-header {
-		position: relative; 
-		#background-color: $dark-blue;
-		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#227094), color-stop(100%,#adcfd6)); /* Chrome,Safari4+ */
-		padding-top: 10%;
-		padding-left: 10%;
-		
-
-		h1{ 
-			font-size: 60px;
-			font-weight: bold;
-			color: $orange;
-		}
-		
-		h2 {
-			font-size: 24px;
-		}
-
-	}
+	
 
 	.main {
-		font-size: 20px;
-		width: 600px;
+		font-size: 24px;
+		text-align: center;
+	
 		margin: 0 auto;
-		.airport-info {
+		.container{
+			width: 800px;
+		}
+		.airports-list {
 			background-color: rgba(255, 255, 255, .6);
+			border-radius: 15px;
+			padding: 20px;
+			list-style: none;
+			text-align: left; 
+
+
+			a {
+				text-decoration: underline;
+			}
+		.title {
+			
+		
+			border-bottom: 2px solid black; 
+			text-align: center;
+			font-weight: bold;
+		}
+		.airport{
+			border: 0px solid black; 
+			border-radius: 15px;
+			max-height: 200px;
+			overflow: scroll;
+		}
+
 		}
 	img {
-		margin-left: 6%;
-		height: 300px;
-		width: 500px;
+		margin-left: 0px;
+		height: 200px;
+		width: 400px;
 		border-radius: 10px;
 		border: solid 5px lighten(#333, 50%);
 	}
-	}
+	.airport-info{
+		background-color: lighten($light-blue, 10%);
+		width: 800px;
+		border: 3px solid $orange;
+		border-radius: 5px;
+		position: absolute; 
+		right: 5%;
+		top: 45%;
+		ul{
+			width: 600px;
+			margin: 0 auto;
+		}
+		li{
+			list-style: none;
+		}
+	.airport-review{
+		background-color: rgba(104,160,181, .8);
+		text-align: left; 
+		padding: 10px;
+		margin: 20px;
+		font-family: $review-font;
+		font-size: 14px;
 
+	}
+	}
+	
+
+}
 }
 .navbar {
 	width: 100%;
@@ -58,3 +120,11 @@ $dark-orange: rgba(230,86,58,1);
 	font-size: 18px;
 	font-weight: bold;
 }
+
+#map {
+	float: left;
+	position: fixed;
+	left: 8%;
+	top: 50%;
+}
+

@@ -16,9 +16,10 @@ class UsersController < ApplicationController
   		render 'new'
   	end
 
-  	def review_list
-  		@user = current_user
-  	end
+  end
+
+  def review_list
+  	@user = current_user
   end
 
 end

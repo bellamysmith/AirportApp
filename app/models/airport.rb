@@ -11,5 +11,5 @@ class Airport
 
    	def avg 
    	  sum / size
-	end
+	  end
 end
