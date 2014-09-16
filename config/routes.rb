@@ -1,10 +1,10 @@
 Coffeereview::Application.routes.draw do
 
-  root :to => 'airports#index'
+  root 'airports#index'
 
   resources :airports
   get 'airports/new' => 'airports#new', as: :add_airport
-  
+
   resources :users
   get 'users/:id/reviews' => 'users#review_list', as: :user_reviews
   
