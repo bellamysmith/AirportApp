@@ -25,7 +25,7 @@ class ReviewsController < ApplicationController
 	end
 	def create
 		@user = current_user
-		@review = @user.reviews.new(params.require(:review).permit(:overall_score, :parking, :review_notes, :date_time, :user_id, :airport_id, :food_and_drink, :international, :terminal, :tip, :good_for_layovers, :shopping, :free_wifi, :wifi))
+		@review = @user.reviews.new(params.require(:review).permit(:overall_score, :parking, :review_notes, :user_id, :airport_id, :food_and_drink, :international, :terminal, :tip, :good_for_layovers, :shopping, :free_wifi, :wifi))
 		if @review.save
 			redirect_to review_path(@review)
 		else

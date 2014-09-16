@@ -19,16 +19,16 @@
 
 @font-face {
     font-family: Simplifica;
-    src: url("SIMPLIFICA_Typeface.ttf");
+    src: font-url("SIMPLIFICA_Typeface.ttf");
 }
 @font-face {
     font-family: Wolf_in_the_city;
-    src: url("Wolf_in_the_city.ttf");
+    src: font-url("Wolf_in_the_city.ttf");
 }
 
 @font-face {
     font-family: Wolf_in_the_city_light;
-    src: url("Wolf_in_the_city_light.ttf");
+    src: font-url("Wolf_in_the_city_light.ttf");
 }
 .dropdown-menu{
 	font-size: 20px;
