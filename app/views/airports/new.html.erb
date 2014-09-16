@@ -1,1 +1,6 @@
 <h1>NEW AIRPORT</h1>
+<%= form_for @airport do |f| %>
+<div class="form-group">
+	<%= f.label :code %><%=f.text_field :code %>
+</div>
+<% end %>

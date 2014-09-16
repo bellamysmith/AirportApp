@@ -18,13 +18,15 @@ users = User.create([
 
 airports = Airport.create([
 	{
-		name: "LAX", 
+		name: "Los Angeles International Aiport",
+		code: "LAX", 
 		city: "Los Angeles", 
 		state: "CA"
 
 		},
 	{
-		name: "ATL",
+		name: "Atlanta Hartsfield-Jackson",
+		code: "ATL",
 		city: "Atlanta", 
 		state: "GA"
 		}])

@@ -11,19 +11,43 @@
 <div class="container">
 <%= form_for @review do |f| %>
   <div class="form-group">
-  <%= f.label :overall_score %> <%= f.number_field :overall_score, class: 'form-control' %>
+  <%= f.label :airport %> -- <%= link_to "Add Airport", add_airport_path %><%= f.collection_select(:airport_id, Airport.all, :id, :name, {}, class: 'form-control') %>
   </div>
   <div class="form-group">
-  <%= f.label :parking %> <%= f.number_field :parking, class: 'form-control' %>
+    <%= f.label "Terminal" %> <%= f.text_field :terminal, class: 'form-control' %>
+  </div>
+   <div class="form-group">
+    <%= f.label :overall_score %><%= f.number_field :overall_score, in: 1.0..10.0, step: 0.5, class: 'form-control'%> 
   </div>
   <div class="form-group">
-  <%= f.label :food_and_drink %> <%= f.number_field :food_and_drink, class: 'form-control' %>
+    <%= f.label "International_Terminal?"%><%= f.check_box :international %>
   </div>
   <div class="form-group">
-	<%= f.label :airport %> -- <%= link_to "Add Airport", add_airport_path %><%= f.collection_select(:airport_id, Airport.all, :id, :name, {}, class: 'form-control') %>
-	</div>
+    <%= f.label "Good for Layovers?"%><%= f.check_box :good_for_layovers%>
+  </div>
   <div class="form-group">
-	<%= f.label :review_notes %><%= f.text_field :review_notes, class: 'form-control textarea', rows: 4 %>
+    <%= f.label "Free Wifi?"%><%= f.check_box :free_wifi %>
+  </div>
+  <div class="form-group">
+    <%= f.label "Wifi?"%><%= f.check_box :wifi %>
+  </div>
+ 
+  <div class="form-group">
+    <%= f.label :parking %> <%= f.number_field :parking, in: 1.0..10, step: 0.5, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :food_and_drink %> <%= f.number_field :food_and_drink, in: 1.0..10, step: 0.5, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :shopping %> <%= f.number_field :shopping, in: 1.0..10, step: 0.5, class: 'form-control' %>
+  </div>
+   
+  <div class="form-group">
+    <%= f.label :tip %> <%= f.text_field :tip, class: 'form-control' %>
+  </div>
+ 
+  <div class="form-group">
+    <%= f.label :review_notes %><%= f.text_field :review_notes, class: 'form-control' %>
   </div>
   
   <input name="commit" type="submit" class="btn btn-primary" value="Submit" />

@@ -4,6 +4,7 @@ Coffeereview::Application.routes.draw do
 
   resources :airports
   get 'airports/new' => 'airports#new', as: :add_airport
+ 
   resources :users
   get 'users/:id/reviews' => 'users#review_list', as: :user_reviews
   
@@ -22,6 +23,7 @@ Coffeereview::Application.routes.draw do
 
   resources :reviews
   get 'reviews/new' => 'reviews#new', as: :add_review
+ 
 
 
   # The priority is based upon order of creation: first created -> highest priority.

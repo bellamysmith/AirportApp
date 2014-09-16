@@ -1,4 +1,4 @@
-<body class="airports api">
+<body class="airports airport api">
 <!--HEADEEEEEEEEEEEEEEEEEER -->
 <div class="page-header">
 	<h1>Airport Reviews</h1>
@@ -6,16 +6,33 @@
 </div>
 
 
-
-<h1>API</h1>
-Depart From: <%= @departure_airport %><br>
-Arrive: <%= @arrivalAiportFSCode %><br>
-Stops: <%= @stops %><br>
-Departure Terminal: <%= @departureTerminal %><br>
-<% if @airport.reviews.length > 0 %>
-<% @airport.reviews.all.each do |r| %>
-<%= r.review_notes %>
-<% end %>
+<div class="main">
+<div class="api-info">
+<p>Depart From: <%= link_to @departure_airport, airport_path(@airport) %><br>
+<p>Arrive: <%= link_to @arrivalAiportFSCode, airport_path(Airport.find_or_create_by(code: @arrivalAiportFSCode).id) %><br>
+<p>Stops: <%= @stops %><br>
+<p>Departure Terminal: <%= @departureTerminal %><br>
+</div>
+<div class="airport-info"
+<% if @airport %>
+	<% if @airport.reviews %>
+	<h2>Reviews for <%= @airport.code %>:</h2>
+	<% if @overall.length > 0 %>
+      <h3>Overall Rating (<%= @overall.sum / @overall.length %>)</h3>
+      <% end %>
+		<% if @airport.reviews.all.length >= 1 %>
+			<% @airport.reviews.all.each do |r| %>
+				<div class="airport-review">
+					<p>Overall Score: <%= r.overall_score %></p>
+        			<p><%= r.user.name %> says: <%= r.review_notes %></p></div>
+			<%end%>
+		<%else %>
+			<h2>We could not find any reviews for <%=@departure_airport %></h2>
+		<% end %>
+	<% end %>	
 <% else %>
-<h2>We could not find any reviews for that flight </h2>
+	<h2>We could not find any reviews for that flight </h2>
 <% end %>
+</div>
+</div>
+</div>

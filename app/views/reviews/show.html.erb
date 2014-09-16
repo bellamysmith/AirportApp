@@ -1,0 +1,11 @@
+<h1>This is the review that you just posted!</h1>
+<h2>I hope you like it, if you don't, you can edit it or delete it from this page, or find a list of your past reviews on your profile. Thanks for reviewing <%= @review.airport.name %>
+
+<div class="review">
+	<%= @review.user.name %>
+	<%= @review.overall_score %>
+	<%= @review.parking %>
+	<%= @review.international %>
+	<%= @review.food_and_drink %>
+	<%= @review.review_notes %>
+</div>

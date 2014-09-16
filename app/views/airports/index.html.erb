@@ -7,6 +7,9 @@
 
 
 
+
+
+
 <!--MAIN SECTION -------------------------------------- -->
 
 
@@ -16,18 +19,26 @@
 
 	<% @airports.each do |a| %>
   <div class="airport col-md-6">
-		<p class="title"><%= link_to a.name, airport_path(a) %>
-			<ul class ="details">
-				<li><%= a.city %>
-				<li><%= a.state %>
+		<p class="title"><%= link_to a.name, airport_path(a) %>, (<%= a.code %>)
+			<div class ="details">
+				<p><%= a.city %>, <%= a.state %>
 				<% a.reviews.all.each do |r| %>
-					<li><%= r.review_notes %> - <%= r.user.name %>
+					<p>"<%= r.review_notes %>" - <%= r.user.name %>
 				
 				<%end%>	
 				
-			</ul>
-     </div>
+			</div>
+  </div>
 	<% end %>
+	<%= form_tag airports_path, :method => 'get' do %>
+ 		<p>
+    	<%= text_field_tag :search, params[:search] %>
+    	<%= submit_tag "Search", :name => nil %>
+  	</p>
+	<% end %>
+
+
+</div>
 
 
 

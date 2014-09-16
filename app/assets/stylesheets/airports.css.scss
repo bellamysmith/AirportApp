@@ -38,18 +38,16 @@ $review-font: 'Quattrocento Sans', sans-serif;
 .airports {
 
 	background-color: lighten($orange, 30%);
-	
 	font-family: simplifica;
-	
-	
 
+	
 	.main {
 		font-size: 24px;
 		text-align: center;
-	
 		margin: 0 auto;
 		.container{
 			width: 800px;
+			max-height: 1000px;
 		}
 		.airports-list {
 			background-color: rgba(255, 255, 255, .6);

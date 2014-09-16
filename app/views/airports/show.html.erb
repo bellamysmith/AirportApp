@@ -9,23 +9,28 @@
 <div class="main">
   
   <div class="airport-info">
-    <h1><%= @airport.name %></h1>
+    <h1><%= @airport.name %> (<%=@airport.code %>)</h1>
 
         <p><%= @airport.city %>, <%= @airport.state %></p>
   
       <% if @overall.length > 0 %>
       <h3>Overall Rating (<%= @overall.sum / @overall.length %>)</h3>
       <% end %>
-     
+
+     <% if @airport.reviews.length > 0 %>
       <% @airport.reviews.all.each do |r| %>
        <div class="airport-review">
         <p>Overall Score: <%= r.overall_score %></p>
         <p><%= r.user.name %> says: <%= r.review_notes %></p>
-      </div>
+        </div>
+        <% end %>
+      <% else %>
+        <h3>Sorry, there are no reviews of this airport! If you have been here before, help us out, and <%=link_to "add a review", add_review_path %>
+   
       <% end %>
     </div>
       
-      <%= image_tag @airport.name+".png", id: "map"%>
+      <%= image_tag @airport.code+".png", id: "map"%>
 
 
 

@@ -1,1 +1,6 @@
 <h1>Reviews</h1>
+<h2>Moving down</h2><br>
+<%= form_for Airport.new, url: search_path do |f| %>
+Input: <%= f.text_field :code %>
+<input name="commit" type="submit" class="btn btn-primary" value="Submit" />
+<% end %>
