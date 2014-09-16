@@ -23,7 +23,7 @@
 			<div class ="details">
 				<p><%= a.city %>, <%= a.state %>
 				<% a.reviews.all.each do |r| %>
-					<p>"<%= r.review_notes %>" - <%= r.user.name %>
+					<p>"<%= r.tip %>" - <%= r.user.name %>
 				
 				<%end%>	
 				

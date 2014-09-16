@@ -2,6 +2,7 @@ require 'httparty'
 
 class AirportsController < ApplicationController
 	include HTTParty
+
 	def index
 		@airports = Airport.all.sort_by{ |air| air.reviews.length}.reverse
 		
@@ -11,8 +12,6 @@ class AirportsController < ApplicationController
   		end
 	
 		
-	
-	
 	end
 	def new
 		@airport = Airport.new
@@ -47,7 +46,7 @@ class AirportsController < ApplicationController
 				postalCode: body["airport"]["postalCode"]
 				})
 		
-	end
+		end
 
 		#@airport = Airport.new(params.require(:airport).permit(:name, :code, :city, :state))
 		

@@ -1,3 +1,5 @@
+
+
 <body class="airports">
 <!--HEADEEEEEEEEEEEEEEEEEER -->
 <div class="page-header">
@@ -30,17 +32,38 @@
       <% end %>
     </div>
       
-      <%= image_tag @airport.code+".png", id: "map"%>
+     
 
 
+</div>
 
 
+<script type="text/javascript"
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDrPfR8AXQ08rgjgzOFob-onBJ-hnR3a1s">
+    </script>
+<script type="text/javascript">
+   var initialize = function() {
+        var mapOptions = {
+          center: { lat: <%= @airport.latitude.to_f %>, lng: <%= @airport.longitude.to_f %> },
+          zoom: 14
+        };
+        var map = new google.maps.Map(document.getElementById('map'),
+            mapOptions);
+        var myLatlng = new google.maps.LatLng(<%= @airport.latitude.to_f %>, <%= @airport.longitude.to_f %>);
+        var marker = new google.maps.Marker({
+        position: myLatlng,
+        map: map,
+        title: "Marker"
 
+      })
+      }
+      $(document).ready(initialize);
+      $(document).on('page:load', initialize);
 
-
-
-
-
-
-    <h2>
+    
+    </script>
+<div class="Container">
+<div id="map">
+  Map goes here!
+  </div>
 </div>

@@ -10,23 +10,25 @@ class Airport
   field :country, type: String
   field :postalCode, type: String
   field :score, type: Integer
+
   has_many :reviews
+
+
 
   def self.search(search)
     if search
+      if find_by
       @airport = find_by(:code => "#{search}")
       
-    else
-      self.all
+      else
+        self.all
+      end
     end
   end
-
 
     def sum
       inject(0.0) { |result, el| result + el }
     end
 
-   	def avg 
-   	  sum / size
-	  end
+   
 end

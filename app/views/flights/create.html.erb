@@ -8,11 +8,13 @@
 
 <div class="main">
 <div class="api-info">
-<p>Depart From: <%= link_to @departure_airport, airport_path(@airport) %><br>
+
+<p>Depart From: <%= link_to @departure_airport, airport_path(Airport.find_or_create_by(code: @departure_airport).id) %><br>
 <p>Arrive: <%= link_to @arrivalAiportFSCode, airport_path(Airport.find_or_create_by(code: @arrivalAiportFSCode).id) %><br>
 <p>Stops: <%= @stops %><br>
 <p>Departure Terminal: <%= @departureTerminal %><br>
 </div>
+
 <div class="airport-info"
 <% if @airport %>
 	<% if @airport.reviews %>
