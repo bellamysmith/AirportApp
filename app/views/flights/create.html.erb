@@ -7,19 +7,24 @@
 
 
 <div class="main">
-<div class="api-info">
+<% if @arrivalAirport != nil %>
+	<div class="api-info">
 
-<p>Depart From: <%=link_to @departure_airport, airport_path(@airport) %><br>
-<p>Arrive: <%= link_to @arrivalAiportFSCode, airport_path(@arrivalAirport) %><br>
+		<p>Depart From: <%=link_to @departure_airport, airport_path(@airport) %><br>
+		<p>Arrive: <%= link_to @arrivalAiportFSCode, airport_path(@arrivalAirport.id) %><br>
 
-<p>Stops: <%= @stops %><br>
-<p>Departure Terminal: <%= @departureTerminal %><br>
-
+		<p>Stops: <%= @stops %><br>
+		<p>Departure Terminal: <%= @departureTerminal %><br>
+<% else %>
+	<div class = "airport-info">
+	<p>Your request could not go through, your flight might not be on the current schedule. Please try again! </p>
+	</div>
+<% end %>
 </div>
 
 
-<div class="airport-info"
-<% if @airport %>
+<div class="airport-info">
+<% if @airport != nil%>
 	<% if @airport.reviews %>
 		<h2>Reviews for <%= @airport.code %>:</h2>
 		<% if @overall.length > 0 %>
@@ -31,12 +36,10 @@
 					<p>Overall Score: <%= r.overall_score %></p>
         			<p><%= r.user.name %> says: <%= r.review_notes %></p></div>
 			<%end%>
-		<%else %>
-			<h2>We could not find any reviews for <%=@departure_airport %></h2>
+		
 		<% end %>
 	<% end %>	
-<% else %>
-	<h2>We could not find any reviews for that flight </h2>
+
 <% end %>
 </div>
 </div>

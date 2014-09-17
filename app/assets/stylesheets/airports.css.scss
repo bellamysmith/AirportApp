@@ -13,11 +13,24 @@ $review-font: 'Quattrocento Sans', sans-serif;
 .navbar {
 	position: absolute;
 	top: 10px;
-	z-index: 100;
+	z-index: 1;
+	background-color: rgba(34,112,148,.6);
+	color: $dark-orange;
+	border: none;
+	height: 30px;
+	a {
+		color: $dark-orange;
+	}
+	nav navbar-nav{
+
+			color: $dark-orange;
+	}
+	
 }
 .page-header {
 	position: relative; 
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#227094), color-stop(100%,#adcfd6)); /* Chrome,Safari4+ */
+	top: 10px;
 	padding-top: 10%;
 	padding-left: 10%;
 		

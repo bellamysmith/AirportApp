@@ -29,7 +29,7 @@ class FlightsController < ApplicationController
 		@info = response.body
 		body = JSON.parse(@info)
 		
-		if @response_code == 200
+		if @response_code == 200 
 		
 			@departure_airport = body["scheduledFlights"][0]["departureAirportFsCode"]
 			@arrivalAiportFSCode = body["scheduledFlights"][0]["arrivalAirportFsCode"]
@@ -90,7 +90,9 @@ class FlightsController < ApplicationController
 				@arrivalAirport = Airport.find_by(code: @departure_airport)
 
 			end
-
+		else
+			@airport = nil
+			@arrivalAirport	= nil
 		end	
 		if @airport
 			@overall = []
