@@ -4,8 +4,8 @@ class AirportsController < ApplicationController
 	include HTTParty
 
 	def index
-		@airports = Airport.all
-		#@airports = Airport.all.sort_by{ |air| air.reviews.length}.reverse.values_at(0,1,2,3,4)
+		#@airports = Airport.all
+		@airports = Airport.all.sort_by{ |air| air.reviews.length}.reverse.values_at(0,1,2,3,4)
 		
 		if params[:search]
   			@searches = Airport.search(params[:search])
