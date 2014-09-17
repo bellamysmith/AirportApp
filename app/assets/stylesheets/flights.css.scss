@@ -22,16 +22,26 @@ $review-font: 'Quattrocento Sans', sans-serif;
 			font-size: 24px;
 		}
 	}
-	.airport-info {
-		position: absolute;
-		
+	.arrival, .departure{
+		position: relative;
+		top: 20px;
+		background-color: $light-blue;
+		border: $orange 2px solid;
+		width: 700px;
+		margin: 20px auto;
+		max-height: 800px;
+
 		
 	}
 	.api-info {
 		background-color: lighten($light-blue, 10%);
-		width: 200px;
-		margin: 20px;
+		width: 250px;
+		margin: 20px 20px 20px 60px;
 		text-align: left;
-		padding: 10px;
+		padding: 10px 20px 10px 20px;
+		float: left;
+		border: $medium-blue 2px solid;
+		border-radius: 5px;
+		h2{ text-decoration: underline;}
 	}
 }

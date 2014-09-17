@@ -94,6 +94,13 @@ class FlightsController < ApplicationController
 			@airport = nil
 			@arrivalAirport	= nil
 		end	
+		def overalls(airport)
+			overall = []
+
+			airport.reviews.each do |r|
+				overall.push(r.overall_score)
+			end 
+		end
 		if @airport
 			@overall = []
 
@@ -101,6 +108,7 @@ class FlightsController < ApplicationController
 				@overall.push(r.overall_score)
 			end
 		end
+
 	end
 
 

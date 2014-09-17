@@ -45,8 +45,12 @@ $review-font: 'Quattrocento Sans', sans-serif;
 		font-size: 28px;
 	}
 }
-
-
+.yes {
+	border: 2px solid green;
+}
+.no {
+	color: red;
+}
 .airports {
 
 	background-color: lighten($orange, 30%);
@@ -58,7 +62,7 @@ $review-font: 'Quattrocento Sans', sans-serif;
 		text-align: center;
 		margin: 0 auto;
 		.container{
-			width: 800px;
+			width: 900px;
 			max-height: 1000px;
 		}
 		.airports-list {
@@ -101,15 +105,7 @@ $review-font: 'Quattrocento Sans', sans-serif;
 		li{
 			list-style: none;
 		}
-		.airport-review{
-			background-color: rgba(104,160,181, .8);
-			text-align: left; 
-			padding: 10px;
-			margin: 20px;
-			font-family: $review-font;
-			font-size: 14px;
 
-		}
 	}
 	
 
@@ -122,11 +118,10 @@ $review-font: 'Quattrocento Sans', sans-serif;
 .airport {
 	.map{
 		background-color: none;
-		
 		position: relative;
 		padding-top: 10%;
 		padding-left: 10%;
-		height: 500px;
+		height: 900px;
 		border-bottom: $light-blue 2px solid;
 
 	}
@@ -138,6 +133,15 @@ $review-font: 'Quattrocento Sans', sans-serif;
 	top: 0; 
 	font-size: 18px;
 	font-weight: bold;
+}
+.airport-review{
+	background-color: rgba(104,160,181, .8);
+	text-align: left; 
+	padding: 10px;
+	margin: 20px;
+	font-family: $review-font;
+	font-size: 14px;
+
 }
 
 

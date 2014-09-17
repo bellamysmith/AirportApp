@@ -6,12 +6,12 @@ class Review
   field :review_notes, type: String
   field :food_and_drink, type: Integer
   field :terminal, type: Integer
-  field :international, type: Boolean
+  field :international, type: Boolean, default: nil
   field :tip, type: String
   field :good_for_layovers, type: String
   field :shopping, type: String
-  field :free_wifi, type: Boolean
-  field :wifi, type: Boolean
+  field :free_wifi, type: Boolean, default: nil
+  field :wifi, type: Boolean, default: nil
   
   belongs_to :user
   belongs_to :airport

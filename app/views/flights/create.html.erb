@@ -9,6 +9,7 @@
 <div class="main">
 <% if @arrivalAirport != nil %>
 	<div class="api-info">
+		<h2>You're Airports:</h2>
 
 		<p>Depart From: <%=link_to @departure_airport, airport_path(@airport) %><br>
 		<p>Arrive: <%= link_to @arrivalAiportFSCode, airport_path(@arrivalAirport.id) %><br>
@@ -17,16 +18,16 @@
 		<p>Departure Terminal: <%= @departureTerminal %><br>
 <% else %>
 	<div class = "airport-info">
-	<p>Your request could not go through, your flight might not be on the current schedule. Please try again! </p>
+		<p>Your request could not go through, your flight might not be on the current schedule. Please try again! </p>
 	</div>
 <% end %>
 </div>
 
 
-<div class="airport-info">
+<div class="departure">
 <% if @airport != nil%>
 	<% if @airport.reviews %>
-		<h2>Reviews for <%= @airport.code %>:</h2>
+		<h2>Reviews for <%= @airport.name %>:</h2>
 		<% if @overall.length > 0 %>
       		<h3>Overall Rating (<%= @overall.sum / @overall.length %>)</h3>
       	<% end %>
@@ -36,11 +37,35 @@
 					<p>Overall Score: <%= r.overall_score %></p>
         			<p><%= r.user.name %> says: <%= r.review_notes %></p></div>
 			<%end%>
-		
+	
 		<% end %>
+	<% else %>
+		<p>There are no reviews for <%= @airport.name %>, yet. <%= link_to "Add a review", add_review_path %> now, if you
+			would like! </p>
 	<% end %>	
 
 <% end %>
+</div>
+<div class="arrival">
+	<% if @arrivalAirport != nil%>
+		<% if @arrivalAirport.reviews %>
+			<h2>Reviews for <%= @arrivalAirport.name %>:</h2>
+	      		<h3>Overall Rating <%= @arrivalAirport.score %></h3>
+	
+			<% if @arrivalAirport.reviews.all.length >= 1 %>
+				<% @arrivalAirport.reviews.all.each do |r| %>
+					<div class="airport-review">
+						<p>Overall Score: <%= r.overall_score %></p>
+	        			<p><%= r.user.name %> says: <%= r.review_notes %></p></div>
+				<%end%>
+		
+			<% end %>
+		<% else %>
+			<p>There are no reviews for <%= @arrivalAirport.name %>, yet. <%= link_to "Add a review", add_review_path %> now, if you
+				would like! </p>
+		<% end %>	
+
+	<% end %>
 </div>
 </div>
 </div>

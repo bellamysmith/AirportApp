@@ -16,20 +16,18 @@
 <div class='main'>
 	<p class="intro">Here are some of the airports that you can view reviews for. Are you stuck in LA? Try looking for recommendations for LAX!</p>
 	<div class-"search">
-	<%= form_tag airports_path, :method => 'get' do %>
-		<p>
-  		<%= text_field_tag :search, params[:search] %>
-   		<%= submit_tag "Search", :name => nil %>
-  		</p>
-	<% end %>
+	
 	</div>
 	<div class="airports-list container">
 
 		<% @airports.each do |a| %>
  			<div class="airport col-md-6">
-				<p class="title"><%= link_to a.name, airport_path(a) %>, (<%= a.code %>)
+				<p class="title"><%= link_to a.name, airport_path(a) %>, (<%= a.code %>) --<span class="score"><%= a.score %></span>
 				<div class ="details">
-					<p><%= a.city %>, <%= a.state %>
+					<p class="col-md-12"><%= a.city %>, <%= a.state %></p>
+					<p class="col-md-6 <%= a.free_wifi? == "Yes" ? "yes" : "no" %>">Free Wifi? <%= a.free_wifi?%> </p>
+					<p class="col-md-6">Wifi? <%= a.wifi? %><p>
+
 					<% a.reviews.all.each do |r| %>
 						<% if r.tip != nil %>
 							<p>"<%= r.tip %>" - <%= r.user.name %>
