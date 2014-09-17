@@ -18,6 +18,10 @@ class ReviewsController < ApplicationController
 
 	end
 	def new
+
+		if !logged_in?
+			redirect_to sign_in_path
+		end
 		@review = Review.new
 	end
 	def show

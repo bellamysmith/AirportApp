@@ -1,5 +1,6 @@
 class Airport
   include Mongoid::Document
+  include ActiveModel::Validations
   field :code, type: String
   field :name, type: String
   field :city, type: String
@@ -13,14 +14,16 @@ class Airport
 
   has_many :reviews
 
+  validates_uniqueness_of :code, message: "That airport already exists"
 
 
   def self.search(search)
     if search
-      if find_by
-      @airport = find_by(:code => "#{search}")
+      if where(:code => "#{search}").exists?
+        @airport = find_by(:code => "#{search}")
       
       else
+        binding.pry
         self.all
       end
     end

@@ -14,7 +14,6 @@ $review-font: 'Quattrocento Sans', sans-serif;
 	position: absolute;
 	top: 10px;
 	z-index: 100;
-
 }
 .page-header {
 	position: relative; 
@@ -31,14 +30,14 @@ $review-font: 'Quattrocento Sans', sans-serif;
 		
 	h2 {
 		font-size: 28px;
-}
+	}
 }
 
 
 .airports {
 
 	background-color: lighten($orange, 30%);
-	font-family: simplifica;
+	font-family: 'Simplifica', 'Oswald', sans-serif;
 
 	
 	.main {
@@ -60,21 +59,19 @@ $review-font: 'Quattrocento Sans', sans-serif;
 			a {
 				text-decoration: underline;
 			}
-		.title {
-			
-		
-			border-bottom: 2px solid black; 
-			text-align: center;
-			font-weight: bold;
-		}
-		.airport{
-			border: 0px solid black; 
-			border-radius: 15px;
-			max-height: 200px;
-			overflow: scroll;
-		}
+			.title {
+				border-bottom: 2px solid black; 
+				text-align: center;
+				font-weight: bold;
+			}
+			.airport{
+				border: 0px solid black; 
+				border-radius: 15px;
+				max-height: 200px;
+				overflow: scroll;
+			}
 
-		}
+	}
 	img {
 		margin-left: 0px;
 		height: 200px;
@@ -97,20 +94,37 @@ $review-font: 'Quattrocento Sans', sans-serif;
 		li{
 			list-style: none;
 		}
-	.airport-review{
-		background-color: rgba(104,160,181, .8);
-		text-align: left; 
-		padding: 10px;
-		margin: 20px;
-		font-family: $review-font;
-		font-size: 14px;
+		.airport-review{
+			background-color: rgba(104,160,181, .8);
+			text-align: left; 
+			padding: 10px;
+			margin: 20px;
+			font-family: $review-font;
+			font-size: 14px;
 
-	}
+		}
 	}
 	
 
 }
+	.search {
+		position: relative;
+		top: -100px;
+	}
 }
+.airport {
+	.map{
+		background-color: none;
+		
+		position: relative;
+		padding-top: 10%;
+		padding-left: 10%;
+		height: 500px;
+		border-bottom: $light-blue 2px solid;
+
+	}
+}
+
 .navbar {
 	width: 100%;
 	position: absolute; 
@@ -119,14 +133,5 @@ $review-font: 'Quattrocento Sans', sans-serif;
 	font-weight: bold;
 }
 
-#map {
-	float: left;
-	position: fixed;
-	left: 4%;
-	top: 50%;
-	width: 400px;
-	height: 200px;
-	border: $orange solid 2px;
-	border-radius: 5px;
-}
+
 

@@ -11,7 +11,7 @@ Coffeereview::Application.routes.draw do
   get '/signup' => 'users#new', as: :sign_up
 
   get '/signin', to: 'sessions#new', as: :sessions
-  post '/signin', to: 'sessions#create'
+  post '/signin', to: 'sessions#create', as: :sign_in
   delete '/signout' => 'sessions#destroy', as: :sign_out
 
   resources :flights

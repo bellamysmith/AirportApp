@@ -1,6 +1,8 @@
 <h1>NEW AIRPORT</h1>
+
 <%= form_for @airport do |f| %>
+
 <div class="form-group">
-	<%= f.label :code %><%=f.text_field :code %>
+	<%= f.label :code %><%=f.text_field :code %> <p id="error-message"><%= @airport.errors.messages[:code][0] %></p>
 </div>
 <% end %>

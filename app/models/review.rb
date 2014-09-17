@@ -15,4 +15,7 @@ class Review
   
   belongs_to :user
   belongs_to :airport
+
+  validates_presence_of :overall_score
+  validates_presence_of :review_notes
 end
