@@ -1,6 +1,7 @@
 class Airport
   include Mongoid::Document
   include ActiveModel::Validations
+  
   field :code, type: String
   field :name, type: String
   field :city, type: String
