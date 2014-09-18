@@ -38,7 +38,7 @@ class FlightsController < ApplicationController
 			
 			@airport = Airport.where(code: @departure_airport).exists?
 			@arrivalAirport = Airport.where(code:  @arrivalAirportFsCode).exists?
-			if !@airport
+			if @airport == false
 			
 				url = "https://api.flightstats.com/flex/airports/rest/v1/json/"+@departure_airport+"/today?appId=324bdb96&appKey=8f9653ee6ff13e561ba83594ba49f384"
 				response = HTTParty.get(url)
@@ -59,13 +59,14 @@ class FlightsController < ApplicationController
 						country: body["airport"]["countryCode"],
 						postalCode: body["airport"]["postalCode"]
 				})
+					@airport.save
 				end
 			else
 				@airport = Airport.find_by(code: @departure_airport)
 
 			end
 			
-			if !@arrivalAirport
+			if @arrivalAirport == false
 				url = "https://api.flightstats.com/flex/airports/rest/v1/json/"+@arrivalAiportFSCode+"/today?appId=324bdb96&appKey=8f9653ee6ff13e561ba83594ba49f384"
 				response = HTTParty.get(url)
 				@response_code = response.code
@@ -87,27 +88,15 @@ class FlightsController < ApplicationController
 				})
 				end
 			else
-				@arrivalAirport = Airport.find_by(code: @departure_airport)
+				@arrivalAirport = Airport.find_by(code: @arrival_airport)
 
 			end
 		else
 			@airport = nil
 			@arrivalAirport	= nil
 		end	
-		def overalls(airport)
-			overall = []
+	
 
-			airport.reviews.each do |r|
-				overall.push(r.overall_score)
-			end 
-		end
-		if @airport
-			@overall = []
-
-			@airport.reviews.each do |r|
-				@overall.push(r.overall_score)
-			end
-		end
 
 	end
 

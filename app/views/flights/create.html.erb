@@ -12,7 +12,7 @@
 		<h2>You're Airports:</h2>
 
 		<p>Depart From: <%=link_to @departure_airport, airport_path(@airport) %><br>
-		<p>Arrive: <%= link_to @arrivalAiportFSCode, airport_path(@arrivalAirport.id) %><br>
+		<p>Arrive: <%= link_to @arrivalAiportFSCode, airport_path(Airport.find_by(code: @arrivalAiportFSCode)) %><br>
 
 		<p>Stops: <%= @stops %><br>
 		<p>Departure Terminal: <%= @departureTerminal %><br>
@@ -28,20 +28,20 @@
 <% if @airport != nil%>
 	<% if @airport.reviews %>
 		<h2>Reviews for <%= @airport.name %>:</h2>
-		<% if @overall.length > 0 %>
-      		<h3>Overall Rating (<%= @overall.sum / @overall.length %>)</h3>
-      	<% end %>
+	
+      		<h3>Overall Rating (<%= @airport.score %>)</h3>
+      
 		<% if @airport.reviews.all.length >= 1 %>
 			<% @airport.reviews.all.each do |r| %>
 				<div class="airport-review">
 					<p>Overall Score: <%= r.overall_score %></p>
         			<p><%= r.user.name %> says: <%= r.review_notes %></p></div>
 			<%end%>
-	
-		<% end %>
 	<% else %>
 		<p>There are no reviews for <%= @airport.name %>, yet. <%= link_to "Add a review", add_review_path %> now, if you
 			would like! </p>
+		<% end %>
+	
 	<% end %>	
 
 <% end %>
@@ -50,7 +50,7 @@
 	<% if @arrivalAirport != nil%>
 		<% if @arrivalAirport.reviews %>
 			<h2>Reviews for <%= @arrivalAirport.name %>:</h2>
-	      		<h3>Overall Rating <%= @arrivalAirport.score %></h3>
+	      		<h3>Overall Rating (<%= @arrivalAirport.score %>)</h3>
 	
 			<% if @arrivalAirport.reviews.all.length >= 1 %>
 				<% @arrivalAirport.reviews.all.each do |r| %>
@@ -58,11 +58,11 @@
 						<p>Overall Score: <%= r.overall_score %></p>
 	        			<p><%= r.user.name %> says: <%= r.review_notes %></p></div>
 				<%end%>
-		
-			<% end %>
 		<% else %>
 			<p>There are no reviews for <%= @arrivalAirport.name %>, yet. <%= link_to "Add a review", add_review_path %> now, if you
 				would like! </p>
+			<% end %>
+		
 		<% end %>	
 
 	<% end %>

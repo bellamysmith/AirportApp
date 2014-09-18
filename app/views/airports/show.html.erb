@@ -12,12 +12,13 @@
   
   <div class="airport-info">
     <h1><%= @airport.name %> (<%=@airport.code %>)</h1>
+    <%= link_to "Edit "+ @airport.code, edit_airport_path if logged_in? && current_user.name == "Test" %>
 
         <p><%= @airport.city %>, <%= @airport.state %></p>
   
-      <% if @overall.length > 0 %>
-      <h3>Overall Rating (<%= @overall.sum / @overall.length %>)</h3>
-      <% end %>
+    
+      <h3>Overall Rating (<%= @airport.score %>)</h3>
+    
 
      <% if @airport.reviews.length > 0 %>
       <% @airport.reviews.all.each do |r| %>
@@ -38,9 +39,6 @@
 </div>
 
 
-<script type="text/javascript"
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDrPfR8AXQ08rgjgzOFob-onBJ-hnR3a1s">
-    </script>
 <script type="text/javascript">
    var initialize = function() {
         var mapOptions = {

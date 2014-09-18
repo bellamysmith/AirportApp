@@ -53,8 +53,9 @@ class Airport
     self.reviews.each do |r| 
       free_wifi.push(r.free_wifi)
     end
-    truth = free_wifi.count(true)
-    falses = free_wifi.count(false)
+    
+    truth = free_wifi.count("Yes")
+    falses = free_wifi.count("No")
 
     if truth > falses
       free_wifi = "Yes"

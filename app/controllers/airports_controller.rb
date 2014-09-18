@@ -28,6 +28,20 @@ class AirportsController < ApplicationController
 		end
 	
 	end
+	def edit
+		@airport = Airport.find(params[:id])
+	end
+	def update
+ 		@airport = Airport.find(params[:id])
+ 		
+ 		if @airport.update_attributes(params.require(:airport).permit(:name, :street, :postalCode, :latitude, :longitude, :country))
+ 			redirect_to airport_path(@airport)
+ 		else
+ 			render 'edit'
+ 		end	
+ 		
+ 	end
+
 	def create
 
 		url = "https://api.flightstats.com/flex/airports/rest/v1/json/"+params[:airport][:code]+"/today?appId=324bdb96&appKey=8f9653ee6ff13e561ba83594ba49f384"

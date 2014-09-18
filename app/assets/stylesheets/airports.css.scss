@@ -46,11 +46,12 @@ $review-font: 'Quattrocento Sans', sans-serif;
 	}
 }
 .yes {
-	border: 2px solid green;
+	color: green;
 }
 .no {
 	color: red;
 }
+
 .airports {
 
 	background-color: lighten($orange, 30%);

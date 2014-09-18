@@ -1,21 +1,13 @@
 class ReviewsController < ApplicationController
 	def index
-		@airports = Airport.all
-		def score
-			@airports.each do |a|
-				@overall = []
-				@airport.reviews.each do |r|
-					@overall.push(r.overall_score)
-				end
-			
-			a.score = @overall.reduce(:+) / @overall.length
-
+		@airports = []
+		@airport = Airport.all.each do |a|
+			if a.score.to_i > 5
+				@airports.push([a.name, a.score])
 			end
-
-		end
-
+				@airports.sort_by {|a, v| a = v}
+			end
 		
-
 	end
 	def new
 

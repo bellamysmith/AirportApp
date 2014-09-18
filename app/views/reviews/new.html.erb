@@ -20,19 +20,22 @@
    <div class="form-group">
     <%= f.label :overall_score %><%= f.number_field :overall_score, in: 1.0..10.0, step: 0.5, class: 'form-control'%> 
   </div>
-  <div class="form-group">
-    <%= f.label "International_Terminal?"%><%= f.check_box :international %>
+</div>
+<div class="form-inline" role="form">
+  <div class="form-group col-md-6 text-right">
+    <%= f.label "International_Terminal?"%><%= f.select :international, ["","Yes","No"]%>
   </div>
-  <div class="form-group">
-    <%= f.label "Good for Layovers?"%><%= f.check_box :good_for_layovers%>
+  <div class="form-group col-md-6 text-left">
+    <%= f.label "Good for Layovers?"%><%= f.select :good_for_layovers, ["", "Yes", "No"] %>
   </div>
-  <div class="form-group">
-    <%= f.label "Free Wifi?"%><%= f.check_box :free_wifi %>
+  <div class="form-group col-md-6 text-right">
+    <%= f.label "Free Wifi?"%><%= f.select :free_wifi, ["","Yes", "No"] %>
   </div>
-  <div class="form-group">
-    <%= f.label "Wifi?"%><%= f.check_box :wifi %>
+  <div class="form-group col-md-6 text-left">
+    <%= f.label "Wifi?"%><%= f.select :wifi, ["", "Yes", "No"]  %>
   </div>
- 
+ </div>
+ <div class="container">
   <div class="form-group">
     <%= f.label :parking %> <%= f.number_field :parking, in: 1.0..10, step: 0.5, class: 'form-control' %>
   </div>
@@ -48,7 +51,7 @@
   </div>
  
   <div class="form-group">
-    <%= f.label :review_notes %><%= f.text_field :review_notes, class: 'form-control' %>
+    <%= f.label :review_notes %><%= f.text_area :review_notes, size: "100x20", class: 'form-control' %>
   </div>
   
   <input name="commit" type="submit" class="btn btn-primary" value="Submit" />

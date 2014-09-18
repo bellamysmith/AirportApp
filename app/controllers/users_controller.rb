@@ -8,6 +8,9 @@ class UsersController < ApplicationController
 	def new
 		@user = User.new
 	end
+	def edit
+		@user = User.find(params[:id])
+	end
 	def create
   	@user = User.new(params.require(:user).permit(:name, :email, :password))
   	if @user.save
@@ -22,4 +25,13 @@ class UsersController < ApplicationController
   	@user = current_user
   end
 
+  def destroy
+  
+  	@user = User.find(params[:id])
+  	log_out
+  	@user.destroy
+  	redirect_to airports_path
+
+
+  end
 end

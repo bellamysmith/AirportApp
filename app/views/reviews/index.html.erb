@@ -1,1 +1,13 @@
-<h1>Reviews</h1>
+<body class="airports reviews">
+
+<div class="page-header">
+	<h1>Airport Reviews</h1>
+	<h2>Here is where you can review an airport, browse reviews, see what there is to do in an airport, view your flight status, and other airport info.</h2>
+</div>
+
+<h1>Top Rated Airports</h1>
+
+<% @airports.each do |a| %>
+	<%= link_to a[0], airport_path(Airport.find_by(name: a[0])) %>, <%= a[1] %>
+<%end%>
+</body>

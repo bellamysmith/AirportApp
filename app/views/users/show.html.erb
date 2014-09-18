@@ -9,64 +9,13 @@
 	<% end %>
 </div>
 
-<!--NAV BARRRRRRRRRRRR -->
-<div class="navbar navbar-default" role="navigation">
-	<div class="container-fluid">
-		<div class="navbar-header">
-      	<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-        <span class="sr-only">Toggle navigation</span>
-      </button>
-      <a class="navbar-brand" href="#">AR</a>
-  		</div>
-  		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      	<ul class="nav navbar-nav">
-        	<li class="active"><a href="#">Airports</a></li>
-        	<li><a href="#">Flights</a></li>
-        	<li class="dropdown">
-         		<a href="#" class="dropdown-toggle" data-toggle="dropdown">Browse Reviews<span class="caret"></span></a>
-          <ul class="dropdown-menu" role="menu">
-            <li><%= link_to "Top-Rated", reviews_path %></li>
-            <li><a href="#">Near You</a></li>
-            <li><a href="#">Best For...</a></li>
-            <li class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-            <li class="divider"></li>
-            <li><a href="#">One more separated link</a></li>
-          </ul>
-        </li>
-      	</ul>
-      <form class="navbar-form navbar-left" role="search">
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search">
-        </div>
-        <button type="submit" class="btn btn-default">Submit</button>
-      </form>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Sign Up</a></li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Write Review<span class="caret"></span></a>
-          <ul class="dropdown-menu" role="menu">
-          	<% if !logged_in? %>
-            <li><%= link_to "Sign Up", sign_up_path %></li>
-            <li><%= link_to "Sign In", sessions_path %></li>
-            <% end %>
-            <% if logged_in? %>
-            <li><%=link_to "Profile", user_path(current_user) %></li>
-
-            <li class="divider"></li>
-            <li><%= link_to "Your Reviews", user_reviews_path(current_user) %></li>
-              <% end %>
-          </ul>
-        </li>
-      </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
     </div>
 </div>
 <h1>USER PROFILE</h1>
 
 <h2><%= @user.name %></h2>
+
+<%= link_to "Edit Account Info", edit_user_path %>
 
 
 

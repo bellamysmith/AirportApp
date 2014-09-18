@@ -1,3 +1,12 @@
+<body class="airports reviews">
+
+<div class="page-header">
+	<h1>Airport Reviews</h1>
+	<h2>Here is where you can review an airport, browse reviews, see what there is to do in an airport, view your flight status, and other airport info.</h2>
+</div>
+
+
+
 <h1>NEW AIRPORT</h1>
 
 <%= form_for @airport do |f| %>
@@ -6,3 +15,5 @@
 	<%= f.label :code %><%=f.text_field :code %> <p id="error-message"><%= @airport.errors.messages[:code][0] %></p>
 </div>
 <% end %>
+
+</body>
