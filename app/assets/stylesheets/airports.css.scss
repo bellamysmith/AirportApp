@@ -10,6 +10,12 @@ $dark-orange: rgba(230,86,58,1);
 $review-font: 'Quattrocento Sans', sans-serif;
 
 
+body{
+	//background-image: url("http://i.imgur.com/wXq1rQI.gif");
+	background-size: cover;
+	
+	background-repeat: none;
+	}
 .navbar {
 	position: absolute;
 	top: 10px;
@@ -144,6 +150,7 @@ $review-font: 'Quattrocento Sans', sans-serif;
 	font-size: 14px;
 
 }
+
 
 
 
