@@ -1,0 +1,12 @@
+
+<%= form_for @airport do |f| %>
+	<%= f.label :name %> <%= f.text_field :name %>
+	<%= f.label :city %><%= f.text_field :city %>
+	<%= f.label :state %><%= f.text_field :state %>
+	<%= f.label :latitude %><%= f.text_field :latitude %>
+	<%= f.label :longitude %><%= f.text_field :longitude %>
+	<%= f.label :street %><%= f.text_field :street %>
+	<%= f.label :postalCode %><%= f.number_field :postalCode %>
+	<%= f.label :country %><%= f.text_field :country %>
+	<%= f.submit "Update!" %>
+<% end %>
