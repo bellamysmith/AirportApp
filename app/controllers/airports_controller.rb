@@ -6,7 +6,7 @@ class AirportsController < ApplicationController
 	def index
 		#@airports = Airport.all
 		#If you are pushing to heroku and re-seeding the DB remember to limit the @airports to 2 positions, then add more airports to DB (or just seed more)!
-		@airports = Airport.all.sort_by{ |air| air.reviews.length}.reverse.values_at(0,1,2,3,4)
+		@airports = Airport.all.sort_by{ |air| air.reviews.length}.reverse.values_at(0..10)
 		
 		if params[:search]
   			@searches = Airport.search(params[:search])

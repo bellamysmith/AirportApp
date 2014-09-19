@@ -20,17 +20,14 @@ body{
 	position: absolute;
 	top: 10px;
 	z-index: 1;
-	background-color: rgba(34,112,148,.6);
+	background-color: $light-blue;
 	color: $dark-orange;
 	border: none;
 	height: 30px;
 	a {
 		color: $dark-orange;
 	}
-	nav navbar-nav{
 
-			color: $dark-orange;
-	}
 	
 }
 .page-header {
@@ -39,6 +36,7 @@ body{
 	top: 10px;
 	padding-top: 10%;
 	padding-left: 10%;
+	z-index: 10;
 		
 
 	h1{ 
@@ -68,16 +66,18 @@ body{
 		font-size: 24px;
 		text-align: center;
 		margin: 0 auto;
-		.container{
-			width: 900px;
-			max-height: 1000px;
-		}
+
 		.airports-list {
 			background-color: rgba(255, 255, 255, .6);
 			border-radius: 15px;
 			padding: 20px;
 			list-style: none;
 			text-align: left; 
+			width: 1200px;
+			max-height: 900px;
+			overflow: scroll;
+
+
 
 
 			a {
@@ -91,7 +91,7 @@ body{
 			.airport{
 				border: 0px solid black; 
 				border-radius: 15px;
-				max-height: 200px;
+				height: 200px;
 				overflow: scroll;
 			}
 
