@@ -24,7 +24,14 @@ class UsersController < ApplicationController
   def review_list
   	@user = current_user
   end
-
+  def update
+    @user = current_user
+    if @user.update_attributes(params.require(:user).permit(:name, :email))
+      redirect_to user_path(@user)
+    else
+      render 'edit'
+    end
+  end
   def destroy
   
   	@user = User.find(params[:id])
