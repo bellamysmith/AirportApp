@@ -12,7 +12,7 @@
 		<h2>You're Airports:</h2>
 
 		<p>Depart From: <%=link_to @departure_airport, airport_path(@airport) %><br>
-		<p>Arrive: <%= link_to @arrivalAiportFSCode, airport_path(Airport.find_by(code: @arrivalAiportFSCode)) %><br>
+		<p>Arrive: <%= link_to @arrivalAirportFSCode, airport_path(@arrivalAirport) %><br>
 
 		<p>Stops: <%= @stops %><br>
 		<p>Departure Terminal: <%= @departureTerminal %><br>
@@ -52,7 +52,7 @@
 			<h2>Reviews for <%= @arrivalAirport.name %>:</h2>
 	      		<h3>Overall Rating (<%= @arrivalAirport.score %>)</h3>
 	
-			<% if @arrivalAirport.reviews.all.length >= 1 %>
+			<% if @arrivalAirport.reviews %>
 				<% @arrivalAirport.reviews.all.each do |r| %>
 					<div class="airport-review">
 						<p>Overall Score: <%= r.overall_score %></p>

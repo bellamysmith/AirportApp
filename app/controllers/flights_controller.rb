@@ -32,12 +32,13 @@ class FlightsController < ApplicationController
 		if @response_code == 200 
 		
 			@departure_airport = body["scheduledFlights"][0]["departureAirportFsCode"]
-			@arrivalAiportFSCode = body["scheduledFlights"][0]["arrivalAirportFsCode"]
+			@arrivalAirportFSCode = body["scheduledFlights"][0]["arrivalAirportFsCode"]
 			@stops = body["scheduledFlights"][0]["stops"]
 			@departureTerminal = body["scheduledFlights"][0]["departureTerminal"]
 			
 			@airport = Airport.where(code: @departure_airport).exists?
-			@arrivalAirport = Airport.where(code:  @arrivalAirportFsCode).exists?
+			@arrivalAirport = Airport.where(code:  @arrivalAirportFSCode).exists?
+			
 			if @airport == false
 			
 				url = "https://api.flightstats.com/flex/airports/rest/v1/json/"+@departure_airport+"/today?appId=324bdb96&appKey=8f9653ee6ff13e561ba83594ba49f384"
@@ -88,8 +89,8 @@ class FlightsController < ApplicationController
 				})
 				end
 			else
-				@arrivalAirport = Airport.find_by(code: @arrival_airport)
-
+				@arrivalAirport = Airport.find_by(code: @arrivalAirportFSCode)
+				
 			end
 		else
 			@airport = nil
