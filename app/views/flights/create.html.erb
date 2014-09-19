@@ -14,8 +14,10 @@
 		<p>Depart From: <%=link_to @departure_airport, airport_path(@airport) %><br>
 		<p>Arrive: <%= link_to @arrivalAirportFSCode, airport_path(@arrivalAirport) %><br>
 
-		<p>Stops: <%= @stops %><br>
+		<p>Departure Gate: <%= @departureGate %><br>
 		<p>Departure Terminal: <%= @departureTerminal %><br>
+		<p>Estimated Departure Time: <%= @estimatedDeparture.to_datetime %>
+		<p>Estimated Arrival Time: <%= @estimatedArrival.to_datetime %>	
 <% else %>
 	<div class = "airport-info">
 		<p>Your request could not go through, your flight might not be on the current schedule. Please try again! </p>
@@ -52,7 +54,7 @@
 			<h2>Reviews for <%= @arrivalAirport.name %>:</h2>
 	      		<h3>Overall Rating (<%= @arrivalAirport.score %>)</h3>
 	
-			<% if @arrivalAirport.reviews %>
+			<% if @arrivalAirport.reviews.all.length > 0 %>
 				<% @arrivalAirport.reviews.all.each do |r| %>
 					<div class="airport-review">
 						<p>Overall Score: <%= r.overall_score %></p>
